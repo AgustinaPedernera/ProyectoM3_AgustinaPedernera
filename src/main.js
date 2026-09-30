@@ -1,33 +1,17 @@
-import { router } from "./router.js";
 
-document.addEventListener("click", (event) => {
-  const link = event.target.closest("[data-link]");
+import { router } from './app.js';
 
-  if (!link) return;
-
-  event.preventDefault();
-  window.history.pushState({}, "", link.href);
+document.addEventListener('DOMContentLoaded', () => {
   router();
 });
 
-window.addEventListener("popstate", router);
-
-document.addEventListener("submit", (event) => {
-  if (event.target.id !== "chat-form") return;
+document.addEventListener('click', (event) => {
+  const link = event.target.closest('[data-link]');
+  if (!link) return;
 
   event.preventDefault();
-
-  const input = document.getElementById("message-input");
-  const mensaje = input.value.trim();
-
-  if (!mensaje) return;
-
-  const mensajes = document.getElementById("chat-messages");
-  const burbuja = document.createElement("p");
-
-  burbuja.textContent = mensaje;
-  mensajes.appendChild(burbuja);
-
-  input.value = "";
+  window.history.pushState({}, '', link.getAttribute('href'));
+  router();
 });
-router();
+
+window.addEventListener('popstate', router);

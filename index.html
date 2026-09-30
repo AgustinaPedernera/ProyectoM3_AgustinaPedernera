@@ -2,22 +2,38 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chat</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <link
+    rel="stylesheet"
+    href="/src/styles/styles.css"
+  >
+  <title>Chat de Estrellas</title>
 </head>
+
 <body>
+  <nav>
+    <a href="/home" data-link>Inicio</a>
+    <a href="/chat" data-link>Chat</a>
+    <a href="/about" data-link>Acerca de</a>
 
-    <nav>
-  <a href="/" data-link>Inicio</a>
-  <a href="/chat" data-link>Chat</a>
-  <a href="/about" data-link>Acerca de</a>
-</nav>
+    <button
+      type="button"
+      id="theme-toggle"
+      class="theme-toggle"
+      aria-pressed="false"
+    >
+      ☾ Modo oscuro
+    </button>
+  </nav>
 
-<div id="app"></div>
   <div id="app"></div>
 
-  
-
-  <script type="module" src="./src/main.js"></script>
+  <script
+    type="module"
+    src="./src/main.js"
+  ></script>
 </body>
 </html>
